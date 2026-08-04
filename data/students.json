@@ -1,0 +1,23 @@
+[
+  {
+    "student_id": "STU001",
+    "name": "John Mensah",
+    "class": "SHS 2",
+    "total_fee": 2500.0,
+    "balance": 0.0
+  },
+  {
+    "student_id": "STU002",
+    "name": "Ama Owusu",
+    "class": "SHS 1",
+    "total_fee": 2200.0,
+    "balance": 0.0
+  },
+  {
+    "student_id": "STU003",
+    "name": "Kwame Boateng",
+    "class": "SHS 3",
+    "total_fee": 2700.0,
+    "balance": 1.0
+  }
+]

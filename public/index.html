@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Fees Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>School Fees Portal</h1>
+
+    <div id="alert" class="alert" hidden></div>
+
+    <section id="lookup-section">
+      <form id="lookup-form">
+        <label for="student-id">Student ID</label>
+        <input id="student-id" name="student-id" type="text" placeholder="e.g. STU001" autocomplete="off" required />
+        <button type="submit">Find student</button>
+      </form>
+    </section>
+
+    <section id="student-section" hidden>
+      <div class="student-info">
+        <p><strong id="s-name"></strong> &middot; <span id="s-class"></span></p>
+        <p>Total fee: GHS <span id="s-total"></span></p>
+        <p>Outstanding balance: GHS <span id="s-balance"></span></p>
+      </div>
+
+      <form id="pay-form">
+        <input type="hidden" id="pay-student-id" />
+        <input type="hidden" id="pay-name" />
+        <label for="amount">Amount to pay (GHS)</label>
+        <input id="amount" name="amount" type="number" min="0.01" step="0.01" required />
+        <button type="submit" id="pay-button">Pay now</button>
+      </form>
+
+      <button type="button" id="new-lookup">Look up a different student</button>
+    </section>
+
+    <section id="receipt-section" hidden>
+      <h2>Payment successful</h2>
+      <dl class="receipt">
+        <dt>Transaction ID</dt><dd id="r-id"></dd>
+        <dt>Student</dt><dd id="r-name"></dd>
+        <dt>Amount paid</dt><dd id="r-amount"></dd>
+        <dt>Remaining balance</dt><dd id="r-balance"></dd>
+        <dt>Date/time</dt><dd id="r-time"></dd>
+      </dl>
+      <button type="button" id="done-button">Done</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

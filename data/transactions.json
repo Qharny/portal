@@ -1,0 +1,20 @@
+[
+  {
+    "transaction_id": "78666416-32c7-44be-8c2c-e58abc1d4f9e",
+    "student_id": "STU001",
+    "name": "John Mensah",
+    "amount": 1200.0,
+    "balance_after": 0.0,
+    "timestamp": "2026-08-04T22:18:28.294458+00:00",
+    "status": "success"
+  },
+  {
+    "transaction_id": "2320fd46-8825-4ff7-9f5f-f8a795412d34",
+    "student_id": "STU003",
+    "name": "Kwame Boateng",
+    "amount": 2699.0,
+    "balance_after": 1.0,
+    "timestamp": "2026-08-04T22:19:36.817086+00:00",
+    "status": "success"
+  }
+]
