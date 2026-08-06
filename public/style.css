@@ -1,169 +1,819 @@
 :root {
   color-scheme: light dark;
-  --bg: #f4f5f7;
-  --card-bg: #ffffff;
-  --text: #1c1e21;
-  --muted: #6b7280;
-  --border: #d9dce1;
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --danger-bg: #fdecea;
-  --danger-text: #b3261e;
-  --success-bg: #e8f5e9;
-  --success-text: #1b5e20;
+  
+  /* AI Aesthetic Palette */
+  --bg-main: #0b0f19;
+  --bg-card: #111827;
+  --bg-card-hover: #1f293d;
+  
+  --accent-indigo: #6366f1;
+  --accent-indigo-glow: rgba(99, 102, 241, 0.25);
+  --accent-cyan: #06b6d4;
+  --cu-gold: #eab308;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(99, 102, 241, 0.4);
+  
+  --danger-bg: rgba(239, 68, 68, 0.15);
+  --danger-text: #f87171;
+  --success-bg: rgba(34, 197, 94, 0.15);
+  --success-text: #4ade80;
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --bg: #121316;
-    --card-bg: #1c1e22;
-    --text: #e8e9eb;
-    --muted: #9aa0a8;
-    --border: #33363c;
-    --danger-bg: #3a1f1f;
-    --danger-text: #f28b82;
-    --success-bg: #1c3320;
-    --success-text: #81c995;
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --border-color: rgba(0, 0, 0, 0.08);
+    --border-active: rgba(99, 102, 241, 0.5);
+    --accent-indigo-glow: rgba(99, 102, 241, 0.15);
   }
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg-main);
+  color: var(--text-primary);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   AI Header Navigation
+   ========================================================================== */
+.ai-nav {
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+}
+
+.ai-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ai-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ai-logo-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-indigo);
+  box-shadow: 0 0 12px var(--accent-indigo);
+}
+
+.ai-brand-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.ai-dot {
+  color: var(--cu-gold);
+}
+
+.ai-brand-sub {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--border-color);
+}
+
+.ai-status-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-indigo);
+  background: var(--accent-indigo-glow);
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* ==========================================================================
+   Main AI Portal Card Container
+   ========================================================================== */
+.ai-app-container {
+  flex: 1;
+  max-width: 680px;
+  width: 100%;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.ai-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Step Bar Indicator */
+.ai-step-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ai-step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.25s ease;
+}
+
+.step-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-muted);
+}
+
+.ai-step-item.active {
+  color: var(--accent-indigo);
+}
+
+.ai-step-item.active .step-dot {
+  background: var(--accent-indigo);
+  box-shadow: 0 0 8px var(--accent-indigo);
+}
+
+.ai-step-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+  margin: 0 0.75rem;
+}
+
+/* Alert Notification */
+.ai-alert {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.ai-alert.error {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.ai-alert.success {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+/* ==========================================================================
+   Step 1: Minimalist Search Hub
+   ========================================================================== */
+.ai-hero-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ai-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.ai-subtitle {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.ai-search-form {
+  margin-bottom: 2rem;
+}
+
+.ai-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.35rem 0.4rem 0.35rem 1rem;
+  transition: all 0.25s ease;
+}
+
+.ai-input-wrapper:focus-within {
+  border-color: var(--accent-indigo);
+  box-shadow: 0 0 0 4px var(--accent-indigo-glow);
+}
+
+.search-sparkle {
+  color: var(--text-muted);
+  margin-right: 0.6rem;
+  flex-shrink: 0;
+}
+
+.ai-input-wrapper input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  font-weight: 500;
+  outline: none;
+}
+
+.ai-submit-btn {
+  padding: 0.75rem 1.25rem;
+  background: var(--accent-indigo);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.ai-submit-btn:hover {
+  background: #4f46e5;
+  box-shadow: 0 4px 12px var(--accent-indigo-glow);
+}
+
+/* Demo Chips */
+.ai-demo-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.demo-prompt {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chips-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ai-chip-btn {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0.45rem 0.85rem;
+  border-radius: 50px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ai-chip-btn:hover {
+  border-color: var(--accent-indigo);
+  color: var(--text-primary);
+  background: var(--accent-indigo-glow);
+}
+
+/* ==========================================================================
+   Step 2: Minimalist AI Student Dashboard
+   ========================================================================== */
+.ai-student-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+}
+
+.ai-student-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent-indigo);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  padding: 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
-.card {
-  width: 100%;
-  max-width: 420px;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 2rem;
+.ai-student-info {
+  flex: 1;
 }
 
-h1 {
-  font-size: 1.4rem;
-  margin: 0 0 1.25rem;
+.info-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-h2 {
+.student-name {
+  font-family: var(--font-heading);
   font-size: 1.15rem;
-  margin: 0 0 1rem;
+  font-weight: 700;
 }
 
-form {
+.ai-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  background: var(--danger-bg);
+  color: var(--danger-text);
+}
+
+.ai-badge.cleared {
+  background: var(--success-bg);
+  color: var(--success-text);
+}
+
+.student-meta {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.mono-text {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.highlight-gold {
+  color: var(--cu-gold);
+}
+
+/* Metrics & Analytics */
+.ai-metrics-card {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.metrics-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.metrics-title {
+  color: var(--text-secondary);
+}
+
+.metrics-percentage {
+  color: var(--accent-indigo);
+  font-weight: 700;
+}
+
+.ai-progress-track {
+  width: 100%;
+  height: 6px;
+  background: var(--border-color);
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.ai-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-indigo), var(--cu-gold));
+  border-radius: 50px;
+  transition: width 0.6s ease;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.metric-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.metric-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.metric-value.danger {
+  color: var(--danger-text);
+}
+
+/* Payment Form */
+.ai-pay-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ai-field-group {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
 
-label {
-  font-size: 0.85rem;
-  color: var(--muted);
+.ai-field-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
 }
 
-input[type="text"],
-input[type="number"] {
-  padding: 0.6rem 0.7rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: transparent;
-  color: var(--text);
+.field-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.presets-row {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.ai-preset-chip {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ai-preset-chip:hover {
+  border-color: var(--accent-indigo);
+  color: var(--accent-indigo);
+}
+
+.ai-amount-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.currency-tag {
+  position: absolute;
+  left: 1rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent-indigo);
+}
+
+.ai-amount-input input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 3.5rem;
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
   font-size: 1rem;
+  font-weight: 600;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.ai-amount-input input:focus {
+  border-color: var(--accent-indigo);
+}
+
+/* Channel Cards */
+.ai-channel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.ai-channel-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.85rem;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.ai-channel-card.active {
+  border-color: var(--accent-indigo);
+  background: var(--accent-indigo-glow);
+}
+
+.ai-action-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--accent-indigo);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.ai-action-btn:hover {
+  background: #4f46e5;
+  box-shadow: 0 4px 14px var(--accent-indigo-glow);
+}
+
+/* History */
+.ai-history-block {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--border-color);
+}
+
+.history-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  display: block;
   margin-bottom: 0.75rem;
 }
 
-input:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 1px;
+.history-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-button {
-  cursor: pointer;
+.empty-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.ai-history-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.85rem;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+}
+
+.ai-step-footer {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.ai-text-btn {
+  background: none;
   border: none;
-  border-radius: 8px;
-  padding: 0.65rem 1rem;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.ai-text-btn:hover {
+  color: var(--accent-indigo);
+}
+
+/* ==========================================================================
+   Step 3: Minimalist AI Receipt
+   ========================================================================== */
+.ai-receipt-box {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.receipt-header-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.cu-badge {
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 0.95rem;
+}
+
+.receipt-status-tag {
+  font-size: 0.75rem;
+  color: var(--success-text);
+  background: var(--success-bg);
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
   font-weight: 600;
 }
 
-button[type="submit"] {
-  background: var(--primary);
-  color: #fff;
+.receipt-main-amount {
+  text-align: center;
+  margin-bottom: 1.25rem;
 }
 
-button[type="submit"]:hover {
-  background: var(--primary-hover);
+.amount-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
 }
 
-button[type="submit"]:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-#new-lookup,
-#done-button {
-  margin-top: 0.75rem;
-  background: transparent;
-  color: var(--primary);
-  border: 1px solid var(--border);
-}
-
-.student-info {
-  background: var(--bg);
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-}
-
-.student-info p {
-  margin: 0.25rem 0;
-}
-
-.alert {
-  padding: 0.65rem 0.9rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.alert.error {
-  background: var(--danger-bg);
-  color: var(--danger-text);
-}
-
-.alert.success {
-  background: var(--success-bg);
+.amount-val {
+  font-size: 2rem;
+  font-weight: 800;
   color: var(--success-text);
 }
 
-.receipt {
-  background: var(--bg);
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  margin: 0 0 1rem;
+.ai-receipt-divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 1.25rem 0;
 }
 
-.receipt dt {
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin-top: 0.5rem;
+.ai-receipt-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.88rem;
 }
 
-.receipt dd {
-  margin: 0;
-  font-size: 0.95rem;
-  word-break: break-all;
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-row dt {
+  color: var(--text-muted);
+}
+
+.detail-row dd {
+  font-weight: 600;
+}
+
+.mono-dd {
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ai-icon-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.ai-barcode-line {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-color);
+  text-align: center;
+}
+
+.barcode-symbols {
+  font-family: var(--font-mono);
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.security-stamp {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.ai-receipt-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.ai-receipt-actions button {
+  flex: 1;
+}
+
+.ai-outline-btn {
+  padding: 0.85rem;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.ai-outline-btn:hover {
+  border-color: var(--accent-indigo);
+  color: var(--accent-indigo);
+}
+
+.ai-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Print Rules */
+@media print {
+  body * { visibility: hidden; }
+  #printable-receipt, #printable-receipt * { visibility: visible; }
+  #printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: none;
+  }
 }
