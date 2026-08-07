@@ -38,7 +38,7 @@ let currentStudent = null;
 
 function showAlert(message, type) {
   alertBox.textContent = message;
-  alertBox.className = `ai-alert ${type}`;
+  alertBox.className = `alert-box ${type}`;
   alertBox.hidden = false;
 }
 
@@ -65,7 +65,7 @@ async function requestJSON(url, options) {
   try {
     response = await fetch(url, options);
   } catch (networkError) {
-    throw new Error("Could not reach server. Check connection.");
+    throw new Error("Could not reach the server. Check your connection.");
   }
 
   let data = null;
@@ -105,8 +105,8 @@ lookupForm.addEventListener("submit", async (event) => {
   }
 });
 
-// Demo Student Quick Select Buttons
-document.querySelectorAll(".ai-chip-btn").forEach((btn) => {
+// Quick Demo Selection Buttons
+document.querySelectorAll(".btn-demo").forEach((btn) => {
   btn.addEventListener("click", () => {
     const studentId = btn.getAttribute("data-id");
     studentIdInput.value = studentId;
@@ -131,20 +131,20 @@ function renderStudent(student) {
   sIdDisplay.textContent = student.student_id;
   avatarInitials.textContent = getInitials(student.name);
 
-  // Clearance Analytics Progress
+  // Clearance Progress Calculation
   const totalFee = student.total_fee || 1;
   const paidAmount = Math.max(0, totalFee - student.balance);
   const percentagePaid = Math.min(100, Math.max(0, Math.round((paidAmount / totalFee) * 100)));
 
   progressBarFill.style.width = `${percentagePaid}%`;
-  progressPercentage.textContent = `${percentagePaid}% Paid`;
+  progressPercentage.textContent = `${percentagePaid}% Cleared`;
 
   if (student.balance <= 0) {
     sStatusBadge.textContent = "Cleared";
-    sStatusBadge.className = "ai-badge cleared";
+    sStatusBadge.className = "badge-status cleared";
   } else {
-    sStatusBadge.textContent = "Pending";
-    sStatusBadge.className = "ai-badge danger";
+    sStatusBadge.textContent = "Balance Due";
+    sStatusBadge.className = "badge-status";
   }
 
   document.getElementById("pay-student-id").value = student.student_id;
@@ -156,7 +156,7 @@ function renderStudent(student) {
   
   const payBtnSpan = payButton.querySelector("span");
   if (payBtnSpan) {
-    payBtnSpan.textContent = student.balance <= 0 ? "Account Fully Cleared" : "Process Payment";
+    payBtnSpan.textContent = student.balance <= 0 ? "Account Fully Cleared" : "Process Payment Now";
   }
 }
 
@@ -179,41 +179,41 @@ preset25.addEventListener("click", () => {
   }
 });
 
-// Channel Selection Toggle
-document.querySelectorAll(".ai-channel-card input").forEach((radio) => {
+// Payment Channel Toggle
+document.querySelectorAll(".channel-card input").forEach((radio) => {
   radio.addEventListener("change", () => {
-    document.querySelectorAll(".ai-channel-card").forEach((card) => card.classList.remove("active"));
-    radio.closest(".ai-channel-card").classList.add("active");
+    document.querySelectorAll(".channel-card").forEach((card) => card.classList.remove("active"));
+    radio.closest(".channel-card").classList.add("active");
   });
 });
 
 // Load Student Transaction History
 async function loadStudentTransactions(studentId) {
-  historyContainer.innerHTML = '<p class="empty-text">Loading insights...</p>';
+  historyContainer.innerHTML = '<p class="empty-history">Loading payment records...</p>';
   try {
     const transactions = await requestJSON(`/api/transactions/${encodeURIComponent(studentId)}`);
     if (!transactions || transactions.length === 0) {
-      historyContainer.innerHTML = '<p class="empty-text">No payment records found.</p>';
+      historyContainer.innerHTML = '<p class="empty-history">No payment records found.</p>';
       return;
     }
 
     historyContainer.innerHTML = transactions
       .map(
         (tx) => `
-        <div class="ai-history-row">
+        <div class="history-row">
           <div>
-            <span class="mono-text">Ref: ${tx.transaction_id.slice(0, 8)}...</span>
+            <span class="mono-code">Ref: ${tx.transaction_id.slice(0, 8)}...</span>
             <span style="color: var(--text-muted); font-size: 0.75rem; margin-left: 0.5rem;">
               ${new Date(tx.timestamp).toLocaleDateString()}
             </span>
           </div>
-          <span style="color: var(--success-text); font-weight: 700;">+ GHS ${tx.amount.toFixed(2)}</span>
+          <span style="color: var(--red-primary); font-weight: 700;">+ GHS ${tx.amount.toFixed(2)}</span>
         </div>
       `
       )
       .join("");
   } catch (err) {
-    historyContainer.innerHTML = '<p class="empty-text">Unable to load transaction log.</p>';
+    historyContainer.innerHTML = '<p class="empty-history">Unable to load transaction log.</p>';
   }
 }
 
@@ -230,7 +230,7 @@ payForm.addEventListener("submit", async (event) => {
 
   payButton.disabled = true;
   const payBtnSpan = payButton.querySelector("span");
-  if (payBtnSpan) payBtnSpan.textContent = "Processing...";
+  if (payBtnSpan) payBtnSpan.textContent = "Processing Payment...";
 
   try {
     const transaction = await requestJSON("/api/pay", {
@@ -247,7 +247,7 @@ payForm.addEventListener("submit", async (event) => {
   } catch (err) {
     showAlert(err.message, "error");
     payButton.disabled = false;
-    if (payBtnSpan) payBtnSpan.textContent = "Process Payment";
+    if (payBtnSpan) payBtnSpan.textContent = "Process Payment Now";
   }
 });
 

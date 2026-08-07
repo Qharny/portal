@@ -1,292 +1,445 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Central University Ghana - AI Fee Portal</title>
-  <meta name="description" content="Minimalist, AI-powered student fee portal for Central University Ghana." />
-
-  <!-- Modern Inter & Outfit Typography -->
+  <title>Central University Ghana - School Fees Portal System</title>
+  <meta name="description" content="Portfolio showcase and live student fee management system for Central University Ghana." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <!-- Minimalist AI Header -->
-  <header class="ai-nav">
-    <div class="ai-nav-inner">
-      <div class="ai-brand">
-        <div class="ai-logo-dot"></div>
-        <span class="ai-brand-title">CENTRAL<span class="ai-dot">.</span>AI</span>
-        <span class="ai-brand-sub">Ghana Student Portal</span>
-      </div>
-
-      <div class="ai-nav-status">
-        <div class="ai-status-pill">
-          <svg class="nav-sparkle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.3rem;">
-            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-badge">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
           </svg>
-          <span>Smart Fee System</span>
         </div>
-      </div>
+        <div class="brand-text">
+          <span class="brand-title">CENTRAL UNIVERSITY</span>
+          <span class="brand-sub">Ghana Fees System</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#about-system" class="nav-link">About System</a>
+        <a href="#features" class="nav-link">Capabilities</a>
+        <a href="#tech-stack" class="nav-link">Architecture</a>
+        <a href="#portal" class="nav-cta-btn">Access System</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Main AI App Interface Container -->
-  <main class="ai-app-container">
+  <!-- Portfolio Hero Section -->
+  <section class="portfolio-hero" id="about-system">
+    <div class="hero-container">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        Central University Financial Portal System
+      </div>
 
-    <!-- Central AI Search & Portal Card -->
-    <div class="ai-card">
+      <h1 class="hero-title">
+        Next-Generation Student <span class="highlight-red">Fees & Clearance</span> System
+      </h1>
 
-      <!-- Minimalist Step Status Bar -->
-      <div class="ai-step-bar">
-        <div class="ai-step-item active" id="step-chip-lookup">
-          <span class="step-dot"></span>
-          <span>1. Verify Index</span>
+      <p class="hero-description">
+        An enterprise-grade, web-based financial portal engineered for Central University Ghana. Built to streamline semester fee verification, real-time clearance tracking, flexible Ghana Mobile Money payments, and official digital receipt issuance.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#portal" class="btn-cta-primary">
+          <span>Access The System</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#features" class="btn-cta-secondary">Explore Capabilities</a>
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="metrics-ribbon">
+        <div class="metric-card">
+          <span class="metric-num">100%</span>
+          <span class="metric-lbl">Instant Clearance Sync</span>
         </div>
-        <div class="ai-step-line"></div>
-        <div class="ai-step-item" id="step-chip-student">
-          <span class="step-dot"></span>
-          <span>2. AI Fee Analysis</span>
+        <div class="metric-divider"></div>
+        <div class="metric-card">
+          <span class="metric-num">GHS (₵)</span>
+          <span class="metric-lbl">Ghana Cedi Supported</span>
         </div>
-        <div class="ai-step-line"></div>
-        <div class="ai-step-item" id="step-chip-receipt">
-          <span class="step-dot"></span>
-          <span>3. Digital Receipt</span>
+        <div class="metric-divider"></div>
+        <div class="metric-card">
+          <span class="metric-num">24 / 7</span>
+          <span class="metric-lbl">Automated Availability</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features & System Capabilities -->
+  <section class="capabilities-section" id="features">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">System Capabilities</span>
+        <h2>Designed for Speed, Security & Accuracy</h2>
+        <p>A comprehensive overview of core functionality powering Central University financial services.</p>
+      </div>
+
+      <div class="capabilities-grid">
+        <div class="capability-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.3-4.3"/>
+            </svg>
+          </div>
+          <h3>Smart Index Verification</h3>
+          <p>Instant student index lookup retrieving student name, registered academic programme, total term fees, and current outstanding balances.</p>
+        </div>
+
+        <div class="capability-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <h3>Real-Time Clearance Analytics</h3>
+          <p>Visual progress tracking showing percentage of fee cleared versus pending balance to enable automated course registration clearance.</p>
+        </div>
+
+        <div class="capability-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <rect x="2" y="5" width="20" height="14" rx="2"/>
+              <line x1="2" y1="10" x2="22" y2="10"/>
+            </svg>
+          </div>
+          <h3>Ghana Payment Integration</h3>
+          <p>Simulated payment processing supporting Ghana Mobile Money networks (MTN MoMo, Telecel Cash, AT Money) and Bank Cards (Visa/Mastercard).</p>
+        </div>
+
+        <div class="capability-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <h3>Digital Receipt Generation</h3>
+          <p>Automatic generation of official stamped digital receipts with unique transaction references, barcode graphics, and print support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Architecture Showcase -->
+  <section class="tech-section" id="tech-stack">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">System Architecture</span>
+        <h2>Robust Tech Stack & Integration</h2>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <span class="tech-type">Frontend</span>
+          <h3>Modern Web Client</h3>
+          <p>HTML5, Modern CSS Design System (Red & White Theme), Vanilla JavaScript, SVG Icons, Responsive Breakpoints.</p>
+        </div>
+        <div class="tech-card">
+          <span class="tech-type">Backend</span>
+          <h3>Python REST API</h3>
+          <p>Python Flask Application Server (`server.py`), REST API endpoints for student data, payments, and transaction history.</p>
+        </div>
+        <div class="tech-card">
+          <span class="tech-type">Data Store</span>
+          <h3>Ledger Storage</h3>
+          <p>Thread-safe JSON file persistence (`students.json`, `transactions.json`) with atomic read-modify-write synchronization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive System Portal Section -->
+  <section class="portal-section" id="portal">
+    <div class="portal-container">
+      <div class="portal-banner">
+        <div class="banner-title-wrap">
+          <h2>Central University Fee Portal Interface</h2>
+          <p>Access the live system below to look up fee balances, process payments, and generate official receipts.</p>
         </div>
       </div>
 
-      <!-- Alert Toast Notification -->
-      <div id="alert" class="ai-alert" hidden></div>
-
-      <!-- STEP 1: Minimalist AI Search Lookup -->
-      <section id="lookup-section" class="ai-section">
-        <div class="ai-hero-header">
-          <h1 class="ai-title">Student Fee Portal</h1>
-          <p class="ai-subtitle">Enter your Central University Index Number to generate smart fee insights and process
-            payments.</p>
-        </div>
-
-        <form id="lookup-form" class="ai-search-form">
-          <div class="ai-input-wrapper">
-            <svg class="search-sparkle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2">
-              <path
-                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-            </svg>
-            <input id="student-id" name="student-id" type="text" placeholder="Enter Index No (e.g. STU001)"
-              autocomplete="off" required />
-            <button type="submit" class="ai-submit-btn">
-              <span>Search</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </button>
+      <!-- Main Interactive System Box -->
+      <div class="portal-card">
+        
+        <!-- Step Navigation Bar -->
+        <div class="step-nav">
+          <div class="step-chip active" id="step-chip-lookup">
+            <span class="chip-num">1</span>
+            <span>Verify Index</span>
           </div>
-        </form>
-
-        <!-- Minimalist Demo Chips -->
-        <div class="ai-demo-chips">
-          <span class="demo-prompt">Try Sample Index:</span>
-          <div class="chips-row">
-            <button type="button" class="ai-chip-btn" data-id="STU001">STU001 &bull; John Mensah</button>
-            <button type="button" class="ai-chip-btn" data-id="STU002">STU002 &bull; Ama Owusu</button>
-            <button type="button" class="ai-chip-btn" data-id="STU003">STU003 &bull; Kwame Boateng</button>
+          <div class="step-line"></div>
+          <div class="step-chip" id="step-chip-student">
+            <span class="chip-num">2</span>
+            <span>Fee Statement</span>
           </div>
-        </div>
-      </section>
-
-      <!-- STEP 2: Minimalist AI Student Dashboard & Payment -->
-      <section id="student-section" class="ai-section" hidden>
-        <!-- AI Student Summary Header -->
-        <div class="ai-student-banner">
-          <div class="ai-student-avatar" id="avatar-initials">JM</div>
-          <div class="ai-student-info">
-            <div class="info-top">
-              <h2 id="s-name" class="student-name">Student Name</h2>
-              <span id="s-status-badge" class="ai-badge danger">Pending</span>
-            </div>
-            <p class="student-meta">
-              <span id="s-id-display" class="mono-text">STU001</span> &bull;
-              <span id="s-class">Programme</span> &bull;
-              <span class="highlight-gold">Central University Ghana</span>
-            </p>
+          <div class="step-line"></div>
+          <div class="step-chip" id="step-chip-receipt">
+            <span class="chip-num">3</span>
+            <span>Official Receipt</span>
           </div>
         </div>
 
-        <!-- AI Smart Clearance Analytics -->
-        <div class="ai-metrics-card">
-          <div class="metrics-header">
-            <span class="metrics-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.35rem; vertical-align: -2px;">
-                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
-              </svg>
-              Fee Clearance Intelligence
-            </span>
-            <span id="progress-percentage" class="metrics-percentage">0% Paid</span>
+        <!-- Alert Toast Box -->
+        <div id="alert" class="alert-box" hidden></div>
+
+        <!-- SECTION 1: Student Index Lookup -->
+        <section id="lookup-section" class="portal-step">
+          <div class="step-header">
+            <h3>Student Index Search</h3>
+            <p>Enter a Student Index Code to retrieve current account metrics.</p>
           </div>
 
-          <div class="ai-progress-track">
-            <div id="progress-bar-fill" class="ai-progress-fill" style="width: 0%;"></div>
-          </div>
-
-          <div class="metrics-grid">
-            <div class="metric-box">
-              <span class="metric-label">Approved Semester Fee</span>
-              <span class="metric-value">GHS <span id="s-total">0.00</span></span>
-            </div>
-            <div class="metric-box focus">
-              <span class="metric-label">Outstanding Balance</span>
-              <span class="metric-value danger">GHS <span id="s-balance">0.00</span></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Minimalist Payment Form -->
-        <form id="pay-form" class="ai-pay-form">
-          <input type="hidden" id="pay-student-id" />
-          <input type="hidden" id="pay-name" />
-
-          <div class="ai-field-group">
-            <div class="field-label-row">
-              <label for="amount">Payment Amount (GHS)</label>
-              <div class="presets-row">
-                <button type="button" class="ai-preset-chip" id="preset-full">Full</button>
-                <button type="button" class="ai-preset-chip" id="preset-50">50%</button>
-                <button type="button" class="ai-preset-chip" id="preset-25">25%</button>
+          <form id="lookup-form" class="lookup-form">
+            <div class="input-group">
+              <label for="student-id">Student Index / ID</label>
+              <div class="input-field">
+                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="m21 21-4.3-4.3"/>
+                </svg>
+                <input id="student-id" name="student-id" type="text" placeholder="e.g. STU001" autocomplete="off" required />
               </div>
             </div>
 
-            <div class="ai-amount-input">
-              <span class="currency-tag">GHS</span>
-              <input id="amount" name="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required />
-            </div>
-          </div>
-
-          <!-- Payment Channel Cards -->
-          <div class="ai-field-group">
-            <label>Payment Channel</label>
-            <div class="ai-channel-grid">
-              <label class="ai-channel-card active">
-                <input type="radio" name="pay-method" value="momo" checked />
-                <span>Mobile Money (MTN / Telecel / AT)</span>
-              </label>
-              <label class="ai-channel-card">
-                <input type="radio" name="pay-method" value="card" />
-                <span>Bank Card (Visa / Mastercard)</span>
-              </label>
-            </div>
-          </div>
-
-          <button type="submit" id="pay-button" class="ai-action-btn">
-            <span>Process Payment</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </button>
-        </form>
-
-        <!-- Transaction Log -->
-        <div class="ai-history-block">
-          <span class="history-title">Recent Payments</span>
-          <div id="history-container" class="history-content">
-            <p class="empty-text">No payment records found.</p>
-          </div>
-        </div>
-
-        <div class="ai-step-footer">
-          <button type="button" id="new-lookup" class="ai-text-btn">
-            &larr; Verify another student index
-          </button>
-        </div>
-      </section>
-
-      <!-- STEP 3: Minimalist AI Receipt -->
-      <section id="receipt-section" class="ai-section" hidden>
-        <div class="ai-receipt-box" id="printable-receipt">
-          <div class="receipt-header-brand">
-            <span class="cu-badge">Central University Ghana</span>
-            <span class="receipt-status-tag">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.25rem; vertical-align: -1px;">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <path d="m9 12 2 2 4-4"/>
+            <button type="submit" class="btn-red-submit">
+              <span>Look Up Student</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14"/>
+                <path d="m12 5 7 7-7 7"/>
               </svg>
-              Verified Transaction
-            </span>
+            </button>
+          </form>
+
+          <!-- Quick Demo Buttons -->
+          <div class="demo-select-box">
+            <span class="demo-title">Quick Demo Selection:</span>
+            <div class="demo-buttons">
+              <button type="button" class="btn-demo" data-id="STU001">STU001 &bull; John Mensah</button>
+              <button type="button" class="btn-demo" data-id="STU002">STU002 &bull; Ama Owusu</button>
+              <button type="button" class="btn-demo" data-id="STU003">STU003 &bull; Kwame Boateng</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 2: Student Fee Dashboard -->
+        <section id="student-section" class="portal-step" hidden>
+          <div class="student-profile-bar">
+            <div class="profile-avatar" id="avatar-initials">JM</div>
+            <div class="profile-info">
+              <div class="profile-top">
+                <h3 id="s-name" class="student-name">Student Name</h3>
+                <span id="s-status-badge" class="badge-status">Balance Due</span>
+              </div>
+              <p class="profile-sub">
+                <span id="s-id-display" class="mono-code">STU001</span> &bull; 
+                <span id="s-class">Programme</span> &bull; 
+                <span class="text-red">Central University Ghana</span>
+              </p>
+            </div>
           </div>
 
-          <div class="receipt-main-amount">
-            <span class="amount-sub">Amount Paid</span>
-            <h2 id="r-amount" class="amount-val">GHS 0.00</h2>
+          <!-- Fee Analytics Grid -->
+          <div class="analytics-card">
+            <div class="analytics-header">
+              <span class="analytics-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="margin-right: 0.35rem; vertical-align: -2px;">
+                  <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                </svg>
+                Fee Clearance Analytics
+              </span>
+              <strong id="progress-percentage" class="analytics-percent">0% Cleared</strong>
+            </div>
+
+            <div class="progress-bar-track">
+              <div id="progress-bar-fill" class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+
+            <div class="fee-stats-grid">
+              <div class="stat-box">
+                <span class="stat-label">Total Approved Fee</span>
+                <span class="stat-val">GHS <span id="s-total">0.00</span></span>
+              </div>
+              <div class="stat-box highlight">
+                <span class="stat-label">Outstanding Balance</span>
+                <span class="stat-val danger">GHS <span id="s-balance">0.00</span></span>
+              </div>
+            </div>
           </div>
 
-          <div class="ai-receipt-divider"></div>
+          <!-- Payment Form -->
+          <form id="pay-form" class="pay-form">
+            <input type="hidden" id="pay-student-id" />
+            <input type="hidden" id="pay-name" />
 
-          <dl class="ai-receipt-details">
-            <div class="detail-row">
-              <dt>Reference ID</dt>
-              <dd class="mono-dd">
-                <span id="r-id">---</span>
-                <button type="button" id="copy-tx-btn" class="ai-icon-btn" title="Copy Reference">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                  </svg>
-                </button>
-              </dd>
-            </div>
-            <div class="detail-row">
-              <dt>Student</dt>
-              <dd id="r-name">---</dd>
-            </div>
-            <div class="detail-row">
-              <dt>Remaining Balance</dt>
-              <dd id="r-balance">GHS 0.00</dd>
-            </div>
-            <div class="detail-row">
-              <dt>Timestamp</dt>
-              <dd id="r-time">---</dd>
-            </div>
-          </dl>
+            <div class="input-group">
+              <div class="label-row">
+                <label for="amount">Payment Amount (GHS)</label>
+                <div class="presets-row">
+                  <button type="button" class="btn-preset" id="preset-full">Full Balance</button>
+                  <button type="button" class="btn-preset" id="preset-50">50%</button>
+                  <button type="button" class="btn-preset" id="preset-25">25%</button>
+                </div>
+              </div>
 
-          <div class="ai-barcode-line">
-            <div class="barcode-symbols">||| |||| || ||| |||| | ||| ||||</div>
-            <span class="security-stamp">Official CU Financial Node Verification</span>
+              <div class="input-field currency-field">
+                <span class="currency-prefix">GHS</span>
+                <input id="amount" name="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required />
+              </div>
+            </div>
+
+            <!-- Payment Options -->
+            <div class="input-group">
+              <label>Select Ghana Payment Channel</label>
+              <div class="channel-grid">
+                <label class="channel-card active">
+                  <input type="radio" name="pay-method" value="momo" checked />
+                  <span>Ghana Mobile Money (MTN / Telecel / AT)</span>
+                </label>
+                <label class="channel-card">
+                  <input type="radio" name="pay-method" value="card" />
+                  <span>Bank Card (Visa / Mastercard)</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" id="pay-button" class="btn-red-submit">
+              <span>Process Payment Now</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14"/>
+                <path d="m12 5 7 7-7 7"/>
+              </svg>
+            </button>
+          </form>
+
+          <!-- History Timeline -->
+          <div class="history-block">
+            <span class="history-header">Payment History Log</span>
+            <div id="history-container" class="history-list">
+              <p class="empty-history">No payment records found.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="ai-receipt-actions">
-          <button type="button" id="print-receipt-btn" class="ai-outline-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 6 2 18 2 18 9" />
-              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
-              <rect x="6" y="14" width="12" height="8" />
-            </svg>
-            Print Receipt
-          </button>
-          <button type="button" id="done-button" class="ai-action-btn">
-            Done & Return
-          </button>
-        </div>
-      </section>
+          <div class="step-footer">
+            <button type="button" id="new-lookup" class="btn-text-action">
+              &larr; Look up a different student index
+            </button>
+          </div>
+        </section>
 
+        <!-- SECTION 3: Official Digital Receipt -->
+        <section id="receipt-section" class="portal-step" hidden>
+          <div class="receipt-card" id="printable-receipt">
+            <div class="receipt-top-brand">
+              <span class="receipt-brand-name">Central University Ghana</span>
+              <span class="receipt-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 0.25rem; vertical-align: -1px;">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+                Verified Transaction
+              </span>
+            </div>
+
+            <div class="receipt-amount-display">
+              <span class="amount-title">Amount Paid</span>
+              <h2 id="r-amount" class="amount-figure">GHS 0.00</h2>
+            </div>
+
+            <div class="receipt-divider"></div>
+
+            <dl class="receipt-details">
+              <div class="receipt-row">
+                <dt>Transaction Reference</dt>
+                <dd class="mono-ref">
+                  <span id="r-id">---</span>
+                  <button type="button" id="copy-tx-btn" class="icon-btn-copy" title="Copy Reference">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                  </button>
+                </dd>
+              </div>
+              <div class="receipt-row">
+                <dt>Student Name</dt>
+                <dd id="r-name">---</dd>
+              </div>
+              <div class="receipt-row">
+                <dt>Remaining Balance</dt>
+                <dd id="r-balance">GHS 0.00</dd>
+              </div>
+              <div class="receipt-row">
+                <dt>Date & Time</dt>
+                <dd id="r-time">---</dd>
+              </div>
+            </dl>
+
+            <div class="barcode-container">
+              <div class="simulated-barcode">||| |||| || ||| |||| | ||| ||||</div>
+              <span class="barcode-sub">Verified by Central University Directorate of Finance</span>
+            </div>
+          </div>
+
+          <div class="receipt-actions">
+            <button type="button" id="print-receipt-btn" class="btn-outline-red">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 6 2 18 2 18 9"/>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                <rect x="6" y="14" width="12" height="8"/>
+              </svg>
+              Print Official Receipt
+            </button>
+            <button type="button" id="done-button" class="btn-red-submit">
+              Done & Return
+            </button>
+          </div>
+        </section>
+
+      </div>
     </div>
+  </section>
 
-    <footer class="ai-footer">
-      <span>Central University Ghana &bull; AI Student Financial Portal &bull; 2026</span>
-    </footer>
-  </main>
+  <!-- Portfolio Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="footer-title">Central University Ghana</span>
+        <p>School Fees Management & Financial Services System</p>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2026 Central University Directorate of Finance & ICT. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
-
 </html>
