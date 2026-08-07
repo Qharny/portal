@@ -1,18 +1,22 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Central University Ghana - AI Fee Portal</title>
   <meta name="description" content="Minimalist, AI-powered student fee portal for Central University Ghana." />
-  
+
   <!-- Modern Inter & Outfit Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <!-- Minimalist AI Header -->
@@ -26,7 +30,7 @@
 
       <div class="ai-nav-status">
         <div class="ai-status-pill">
-          <svg class="sparkle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="nav-sparkle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.3rem;">
             <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
           </svg>
           <span>Smart Fee System</span>
@@ -37,10 +41,10 @@
 
   <!-- Main AI App Interface Container -->
   <main class="ai-app-container">
-    
+
     <!-- Central AI Search & Portal Card -->
     <div class="ai-card">
-      
+
       <!-- Minimalist Step Status Bar -->
       <div class="ai-step-bar">
         <div class="ai-step-item active" id="step-chip-lookup">
@@ -66,18 +70,25 @@
       <section id="lookup-section" class="ai-section">
         <div class="ai-hero-header">
           <h1 class="ai-title">Student Fee Portal</h1>
-          <p class="ai-subtitle">Enter your Central University Index Number to generate smart fee insights and process payments.</p>
+          <p class="ai-subtitle">Enter your Central University Index Number to generate smart fee insights and process
+            payments.</p>
         </div>
 
         <form id="lookup-form" class="ai-search-form">
           <div class="ai-input-wrapper">
-            <svg class="search-sparkle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            <svg class="search-sparkle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path
+                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
             </svg>
-            <input id="student-id" name="student-id" type="text" placeholder="Enter Index No (e.g. STU001)" autocomplete="off" required />
+            <input id="student-id" name="student-id" type="text" placeholder="Enter Index No (e.g. STU001)"
+              autocomplete="off" required />
             <button type="submit" class="ai-submit-btn">
               <span>Search</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
             </button>
           </div>
         </form>
@@ -104,8 +115,8 @@
               <span id="s-status-badge" class="ai-badge danger">Pending</span>
             </div>
             <p class="student-meta">
-              <span id="s-id-display" class="mono-text">STU001</span> &bull; 
-              <span id="s-class">Programme</span> &bull; 
+              <span id="s-id-display" class="mono-text">STU001</span> &bull;
+              <span id="s-class">Programme</span> &bull;
               <span class="highlight-gold">Central University Ghana</span>
             </p>
           </div>
@@ -177,7 +188,10 @@
 
           <button type="submit" id="pay-button" class="ai-action-btn">
             <span>Process Payment</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
           </button>
         </form>
 
@@ -223,7 +237,10 @@
               <dd class="mono-dd">
                 <span id="r-id">---</span>
                 <button type="button" id="copy-tx-btn" class="ai-icon-btn" title="Copy Reference">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                  </svg>
                 </button>
               </dd>
             </div>
@@ -249,7 +266,11 @@
 
         <div class="ai-receipt-actions">
           <button type="button" id="print-receipt-btn" class="ai-outline-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9" />
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+              <rect x="6" y="14" width="12" height="8" />
+            </svg>
             Print Receipt
           </button>
           <button type="button" id="done-button" class="ai-action-btn">
@@ -267,4 +288,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

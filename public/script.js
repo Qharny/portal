@@ -189,7 +189,7 @@ document.querySelectorAll(".ai-channel-card input").forEach((radio) => {
 
 // Load Student Transaction History
 async function loadStudentTransactions(studentId) {
-  historyContainer.innerHTML = '<p class="empty-text">Loading insights…</p>';
+  historyContainer.innerHTML = '<p class="empty-text">Loading insights...</p>';
   try {
     const transactions = await requestJSON(`/api/transactions/${encodeURIComponent(studentId)}`);
     if (!transactions || transactions.length === 0) {
